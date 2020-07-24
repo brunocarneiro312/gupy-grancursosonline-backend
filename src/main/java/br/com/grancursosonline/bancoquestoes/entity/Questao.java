@@ -14,6 +14,13 @@ import java.io.Serializable;
 @Table(name = "QUESTAO")
 public class Questao implements Serializable {
 
+    public Questao(Assunto assunto, Orgao orgao, Banca banca, String enunciado) {
+        this.assunto = assunto;
+        this.orgao = orgao;
+        this.banca = banca;
+        this.enunciado = enunciado;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")

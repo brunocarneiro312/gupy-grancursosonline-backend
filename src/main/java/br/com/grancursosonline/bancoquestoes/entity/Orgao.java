@@ -14,6 +14,10 @@ import java.io.Serializable;
 @Table(name = "ORGAO")
 public class Orgao implements Serializable {
 
+    public Orgao(String nome) {
+        this.nome = nome;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")

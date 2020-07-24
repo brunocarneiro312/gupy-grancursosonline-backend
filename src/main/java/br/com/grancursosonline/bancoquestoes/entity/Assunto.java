@@ -15,6 +15,15 @@ import java.util.List;
 @Table(name = "ASSUNTO")
 public class Assunto implements Serializable {
 
+    public Assunto(String topico) {
+        this.topico = topico;
+    }
+
+    public Assunto(String topico, List<Assunto> assuntos) {
+        this.topico = topico;
+        this.assuntos = assuntos;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
