@@ -3,13 +3,14 @@ package br.com.grancursosonline.bancoquestoes.service.impl;
 import br.com.grancursosonline.bancoquestoes.entity.Assunto;
 import br.com.grancursosonline.bancoquestoes.repository.AssuntoRepository;
 import br.com.grancursosonline.bancoquestoes.service.AssuntoService;
+import br.com.grancursosonline.bancoquestoes.service.CrudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
 @Service
-public class AssuntoServiceImpl implements AssuntoService {
+public class AssuntoServiceImpl implements AssuntoService, CrudService<Assunto> {
 
     private AssuntoRepository assuntoRepository;
 

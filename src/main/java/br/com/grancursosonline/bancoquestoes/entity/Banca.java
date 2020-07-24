@@ -14,6 +14,10 @@ import java.io.Serializable;
 @Table(name = "BANCA")
 public class Banca implements Serializable {
 
+    public Banca(String nome) {
+        this.nome = nome;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
