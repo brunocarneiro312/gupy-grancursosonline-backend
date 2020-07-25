@@ -28,6 +28,7 @@ public class QuestaoEndpoint {
     private OrgaoService orgaoService;
     private AssuntoService assuntoService;
 
+    @Autowired
     public QuestaoEndpoint(QuestaoService questaoService,
                            BancaService bancaService,
                            OrgaoService orgaoService,

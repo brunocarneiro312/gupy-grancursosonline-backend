@@ -32,7 +32,7 @@ public class Assunto implements Serializable {
     @Column(name = "TOPICO")
     private String topico;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "ASSUNTO_PAI")
     private List<Assunto> assuntos;
 }

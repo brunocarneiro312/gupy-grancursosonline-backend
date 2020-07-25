@@ -21,7 +21,14 @@ public class AssuntoRequest {
         this.assuntos = assuntos;
     }
 
+    public AssuntoRequest(String topico, List<AssuntoRequest> assuntos, Integer assuntoPai) {
+        this.topico = topico;
+        this.assuntos = assuntos;
+        this.assuntoPai = assuntoPai;
+    }
+
     private Integer id;
     private String topico;
     private List<AssuntoRequest> assuntos = new ArrayList<>();
+    private Integer assuntoPai;
 }
