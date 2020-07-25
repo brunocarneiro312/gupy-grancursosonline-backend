@@ -24,8 +24,30 @@ public class AssuntoResponse {
         this.assuntoPai = assuntoPai;
     }
 
+    public AssuntoResponse(Integer id, String topico,
+                           List<AssuntoResponse> assuntos,
+                           Integer assuntoPai,
+                           String topicoAssuntoPai) {
+        this.id = id;
+        this.topico = topico;
+        this.assuntos = assuntos;
+        this.assuntoPai = assuntoPai;
+        this.topicoAssuntoPai = topicoAssuntoPai;
+    }
+
+    public AssuntoResponse(String topico,
+                           List<AssuntoResponse> assuntos,
+                           Integer assuntoPai,
+                           String topicoAssuntoPai) {
+        this.topico = topico;
+        this.assuntos = assuntos;
+        this.assuntoPai = assuntoPai;
+        this.topicoAssuntoPai = topicoAssuntoPai;
+    }
+
     private Integer id;
     private String topico;
     private List<AssuntoResponse> assuntos = new ArrayList<>();
     private Integer assuntoPai;
+    private String topicoAssuntoPai;
 }

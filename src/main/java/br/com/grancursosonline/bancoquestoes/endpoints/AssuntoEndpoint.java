@@ -37,15 +37,17 @@ public class AssuntoEndpoint {
                 assuntoPai.getAssuntos().add(
                         new Assunto(
                                 assuntoRequest.getTopico(),
-                                null));
+                                null,
+                                assuntoPai));
 
                 this.assuntoService.save(assuntoPai);
 
                 return new ResponseEntity<>(
                         new AssuntoResponse(
-                                assuntoRequest.getId(),
                                 assuntoRequest.getTopico(),
-                                null),
+                                null,
+                                assuntoPai.getId(),
+                                assuntoPai.getTopico()),
                         HttpStatus.OK);
             }
             else {
@@ -115,7 +117,9 @@ public class AssuntoEndpoint {
                     new AssuntoResponse(
                             b.getId(),
                             b.getTopico(),
-                            null)));
+                            null,
+                            b.getAssuntoPai() != null ? b.getAssuntoPai().getId() : null,
+                            b.getAssuntoPai() != null ? b.getAssuntoPai().getTopico() : null)));
             return new ResponseEntity<>(assuntoResponse, HttpStatus.OK);
         }
         catch (Exception e) {

@@ -1,5 +1,6 @@
 package br.com.grancursosonline.bancoquestoes.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +25,12 @@ public class Assunto implements Serializable {
         this.assuntos = assuntos;
     }
 
+    public Assunto(String topico, List<Assunto> assuntos, Assunto assuntoPai) {
+        this.topico = topico;
+        this.assuntos = assuntos;
+        this.assuntoPai = assuntoPai;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -32,7 +39,10 @@ public class Assunto implements Serializable {
     @Column(name = "TOPICO")
     private String topico;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "ASSUNTO_PAI")
+    @OneToMany(mappedBy = "assuntoPai", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Assunto> assuntos;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "ASSUNTO_PAI")
+    private Assunto assuntoPai;
 }
