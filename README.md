@@ -45,7 +45,7 @@ RN3: Preciso de muitas questões para poder gerar programas de estudos diversos.
 ### Configuração
 
 #### Frontend
-- Clone o projeto na sua máquina local
+- Clone o projeto na sua máquina local `https://github.com/brunocarneiro312/gupy-grancursosonline-frontend.git`
 - Importe para a IDE de sua preferência
 - Execute o comando no terminal (mesmo diretório do arquivo package.json)
 `npm install`
@@ -54,7 +54,7 @@ RN3: Preciso de muitas questões para poder gerar programas de estudos diversos.
 - Acesse a url `http://localhost:8080` (a porta não pode estar em uso)
 
 #### Backend
-- Clone o projeto na sua máquina local
+- Clone o projeto na sua máquina local `https://github.com/brunocarneiro312/gupy-grancursosonline-backend.git`
 - Importe para a IDE de sua escolha (Eclipse, IntelliJ, Netbeans...)
 - Configure corretamente os parâmetros de conexão com a base, contida no arquivo `application.properties`
 - Execute o comando `./mvnw spring-boot:run`
