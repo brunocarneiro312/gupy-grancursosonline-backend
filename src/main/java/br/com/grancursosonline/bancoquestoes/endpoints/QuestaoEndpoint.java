@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,6 +105,18 @@ public class QuestaoEndpoint {
                     questao.getOrgao().getNome(),
                     questao.getBanca().getNome(),
                     questao.getEnunciado()), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/plano")
+    public ResponseEntity<List<Object>> get(
+            @PathParam("bancaId") Integer bancaId,
+            @PathParam("orgaoId") Integer orgaoId) {
+        try {
+            List<Object> planoDeEstudos = this.questaoService.getPlanoEstudo(bancaId, orgaoId);
+            return new ResponseEntity<>(planoDeEstudos, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }

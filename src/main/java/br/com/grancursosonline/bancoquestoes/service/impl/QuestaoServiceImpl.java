@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 
 @Service
 public class QuestaoServiceImpl implements QuestaoService, CrudService<Questao> {
@@ -47,5 +48,9 @@ public class QuestaoServiceImpl implements QuestaoService, CrudService<Questao> 
         }
         this.questaoRepository.deleteById(id);
         return questao;
+    }
+
+    public List<Object> getPlanoEstudo(Integer bancaId, Integer orgaoId) {
+        return this.questaoRepository.getPlanoEstudo(bancaId, orgaoId);
     }
 }
