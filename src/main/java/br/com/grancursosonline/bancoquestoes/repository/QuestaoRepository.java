@@ -12,7 +12,7 @@ public interface QuestaoRepository extends JpaRepository<Questao, Integer> {
 
     @Query(
         value = "SELECT A.TOPICO, COUNT(Q.ENUNCIADO) " +
-                "FROM QUESTAO Q, ASSUNTO A " +
+                "FROM questao Q, assunto A " +
                 "WHERE Q.BANCA_ID = :bancaId " +
                 "AND Q.ORGAO_ID = :orgaoId " +
                 "AND A.ID  = Q.ASSUNTO_ID " +
