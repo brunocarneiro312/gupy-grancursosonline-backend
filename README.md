@@ -27,6 +27,10 @@ RN2: Criar mais de uma árvore de assuntos;
 
 RN3: Preciso de muitas questões para poder gerar programas de estudos diversos.
 
+## Atenção
+#### Caso deseje, o sistema poderá ser acessado no ambiente da Amazon AWS
+- Acesse o projeto hospedado em [http://poc-grancursos-online.s3-website-sa-east-1.amazonaws.com/#/](http://poc-grancursos-online.s3-website-sa-east-1.amazonaws.com/#/ "http://poc-grancursos-online.s3-website-sa-east-1.amazonaws.com/#/")
+
 ### Projeto
 
 #### Tecnologias
@@ -67,9 +71,6 @@ RN3: Preciso de muitas questões para poder gerar programas de estudos diversos.
 
 #### Após a execução dos passos acima
 - Abra o navegador de sua preferência e navegue até `http://localhost:8080` para acessar a aplicação.
-
-#### Caso deseje, o sistema poderá ser acessado no ambiente da Amazon AWS
-- Acesse o projeto hospedado em [http://poc-grancursos-online.s3-website-sa-east-1.amazonaws.com/#/](http://poc-grancursos-online.s3-website-sa-east-1.amazonaws.com/#/ "http://poc-grancursos-online.s3-website-sa-east-1.amazonaws.com/#/")
 
 #### Screenshots
 [![](https://i.ibb.co/z5678fv/evd1.png)](https://i.ibb.co/z5678fv/evd1.png)
