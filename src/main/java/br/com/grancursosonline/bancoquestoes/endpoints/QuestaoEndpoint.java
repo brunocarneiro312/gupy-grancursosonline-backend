@@ -1,5 +1,6 @@
 package br.com.grancursosonline.bancoquestoes.endpoints;
 
+import br.com.grancursosonline.bancoquestoes.endpoints.dto.PlanoEstudoResponse;
 import br.com.grancursosonline.bancoquestoes.endpoints.dto.questao.QuestaoRequest;
 import br.com.grancursosonline.bancoquestoes.endpoints.dto.questao.QuestaoResponse;
 import br.com.grancursosonline.bancoquestoes.entity.Assunto;
@@ -111,11 +112,11 @@ public class QuestaoEndpoint {
     }
 
     @GetMapping("/plano")
-    public ResponseEntity<List<Object>> get(
+    public ResponseEntity<List<PlanoEstudoResponse>> get(
             @PathParam("bancaId") Integer bancaId,
             @PathParam("orgaoId") Integer orgaoId) {
         try {
-            List<Object> planoDeEstudos = this.questaoService.getPlanoEstudo(bancaId, orgaoId);
+            List<PlanoEstudoResponse> planoDeEstudos = this.questaoService.getPlanoEstudo(bancaId, orgaoId);
             return new ResponseEntity<>(planoDeEstudos, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

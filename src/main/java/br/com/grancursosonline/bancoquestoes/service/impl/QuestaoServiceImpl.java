@@ -1,5 +1,6 @@
 package br.com.grancursosonline.bancoquestoes.service.impl;
 
+import br.com.grancursosonline.bancoquestoes.endpoints.dto.PlanoEstudoResponse;
 import br.com.grancursosonline.bancoquestoes.entity.Questao;
 import br.com.grancursosonline.bancoquestoes.repository.QuestaoRepository;
 import br.com.grancursosonline.bancoquestoes.service.CrudService;
@@ -7,6 +8,7 @@ import br.com.grancursosonline.bancoquestoes.service.QuestaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -50,7 +52,15 @@ public class QuestaoServiceImpl implements QuestaoService, CrudService<Questao> 
         return questao;
     }
 
-    public List<Object> getPlanoEstudo(Integer bancaId, Integer orgaoId) {
-        return this.questaoRepository.getPlanoEstudo(bancaId, orgaoId);
+    public List<PlanoEstudoResponse> getPlanoEstudo(Integer bancaId, Integer orgaoId) {
+        List<Object[]> planoEstudo = this.questaoRepository.getPlanoEstudo(bancaId, orgaoId);
+        List<PlanoEstudoResponse> planoEstudoResponse = new ArrayList<>();
+        planoEstudo.forEach(p -> {
+            PlanoEstudoResponse dto = new PlanoEstudoResponse();
+            dto.setAssunto(p[0].toString());
+            dto.setCount(Integer.parseInt(p[1].toString()));
+            planoEstudoResponse.add(dto);
+        });
+        return planoEstudoResponse;
     }
 }

@@ -1,5 +1,6 @@
 package br.com.grancursosonline.bancoquestoes.repository;
 
+import br.com.grancursosonline.bancoquestoes.endpoints.dto.PlanoEstudoResponse;
 import br.com.grancursosonline.bancoquestoes.entity.Questao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,7 +19,7 @@ public interface QuestaoRepository extends JpaRepository<Questao, Integer> {
                 "GROUP BY A.TOPICO",
         nativeQuery = true
     )
-    List<Object> getPlanoEstudo(
+    List<Object[]> getPlanoEstudo(
             @Param("bancaId") Integer bancaId,
             @Param("orgaoId") Integer orgaoId);
 }
