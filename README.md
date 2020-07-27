@@ -5,13 +5,13 @@ Prova de conceito para a participação do processo seletivo do Grancursos Onlin
 ### Problema
 1 - Montar uma árvore de assuntos
 
- - Um assunto pode ter N assuntos como filhos. Um assunto filho pertencente a uma árvore não pode estar contida em outra. (OK)
+ - Um assunto pode ter N assuntos como filhos. Um assunto filho pertencente a uma árvore não pode estar contida em outra.
 
-2 - Criar uma entidade de Banca, Órgão e Questão (OK)
+2 - Criar uma entidade de Banca, Órgão e Questão
 
- - Uma questão possui um assunto, um órgão e uma banca vinculada. (OK)
+ - Uma questão possui um assunto, um órgão e uma banca vinculada.
 
-3 - Criar uma página de programa de estudos onde o aluno irá selecionar um órgão e banca (OK)
+3 - Criar uma página de programa de estudos onde o aluno irá selecionar um órgão e banca
 
  - Após criar o programa, deverá ser apresentado a árvore de assuntos para os filtros selecionados; 
 
